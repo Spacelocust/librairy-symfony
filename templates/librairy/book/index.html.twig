@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ book.name }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <a href="{{ path('librairy', { id: book.librairy.id }) }}" class="btn btn-secondary mt-2">retour</a>
+        <h2 class="mt-4">Liste de livres de la bibliothèque : {{ book.name }}</h2>
+        <ul class="list-group mt-3">
+            <li class="list-group-item">Titre: {{ book.name }}</li>
+            <li class="list-group-item">Genre: {{ book.gender }}</li>
+            <li class="list-group-item">Date de publication: {{ book.publicationDate|date("m/d/Y") }}</li>
+            <li class="list-group-item">Affiche: {{ book.poster }}</li>
+        </ul>
+    </div>
+{% endblock %}
